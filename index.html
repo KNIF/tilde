@@ -3,7 +3,30 @@
 <meta name="color-scheme" content="dark light" />
 <meta name="robots" content="noindex" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>~</title>
+<title>Start</title>
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="https://huber.sh/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="https://huber.sh/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="https://huber.sh/favicon-16x16.png"
+/>
+<script
+  async
+  src="https://umami.knif.io/knif.js"
+  data-website-id="76aa2cbb-9947-4a3d-b184-9a6c4cd9c918"
+  data-domains="start.huber.sh"
+></script>
 
 <style>
   :root {
@@ -36,73 +59,59 @@
   const CONFIG = {
     commandPathDelimiter: '/',
     commandSearchDelimiter: ' ',
-    defaultSearchTemplate: 'https://duckduckgo.com/?q={}',
+    defaultSearchTemplate: 'https://kagi.com/search?q={}',
     openLinksInNewTab: true,
     suggestionLimit: 4,
   };
 
   const COMMANDS = new Map([
+    ['o', { name: 'Poe', url: 'https://poe.com/GPT-4' }],
+    ['n', { name: 'nat.dev', url: 'https://nat.dev/chat' }],
     [
-      'b',
+      'p',
       {
-        name: 'Dribbble',
-        url: 'https://dribbble.com/shots/popular',
+        name: 'Phind',
+        searchTemplate: '/search?q={}',
+        url: 'https://www.phind.com',
       },
     ],
     [
-      'c',
+      'x',
       {
-        name: 'Calendar',
-        url: 'https://calendar.google.com',
-      },
-    ],
-    [
-      'd',
-      {
-        name: 'Drive',
-        url: 'https://drive.google.com',
+        name: 'Perplexity',
+        searchTemplate: '/?q={}',
+        url: 'https://www.perplexity.ai',
       },
     ],
     [
       'f',
       {
-        name: 'Figma',
-        url: 'https://www.figma.com/files/recent',
+        name: 'FastGPT',
+        url: 'https://labs.kagi.com/fastgpt',
+      },
+    ],
+    [
+      'l',
+      {
+        name: 'gistlib',
+        url: 'https://gistlib.com/python',
+      },
+    ],
+    [
+      'e',
+      {
+        name: 'Elicit',
+        searchTemplate: '/search?q={}',
+        url: 'https://elicit.org',
       },
     ],
     [
       'g',
       {
         name: 'GitHub',
+        searchTemplate: '/search?q={}',
+        suggestions: ['g/topics', 'g/trending'],
         url: 'https://github.com',
-      },
-    ],
-    [
-      'i',
-      {
-        name: 'Discord',
-        url: 'https://discord.com/channels/@me',
-      },
-    ],
-    [
-      'k',
-      {
-        name: 'Keep',
-        url: 'https://keep.google.com',
-      },
-    ],
-    [
-      'm',
-      {
-        name: 'Mail',
-        url: 'https://mail.proton.me/u/0/inbox',
-      },
-    ],
-    [
-      'n',
-      {
-        name: 'Notion',
-        url: 'https://www.notion.so',
       },
     ],
     [
@@ -116,46 +125,16 @@
           'r/r/onebag',
           'r/r/fujix',
         ],
-        url: 'https://www.reddit.com',
+        url: 'https://reddit.knif.io',
       },
     ],
     [
-      't',
+      'd',
       {
         name: 'DeepL',
-        searchTemplate: '/en/translator#en/es/{}',
-        suggestions: ['t/en/translator#es/en/'],
+        searchTemplate: '/en/translator#en/de/{}',
+        suggestions: ['d/en/translator#de/en/', 'd/en/translator#en/de/'],
         url: 'https://www.deepl.com/en/translator',
-      },
-    ],
-    [
-      'u',
-      {
-        name: 'Supabase',
-        url: 'https://app.supabase.com/projects',
-      },
-    ],
-    [
-      'v',
-      {
-        name: 'Vercel',
-        suggestions: ['sdk.vercel.ai'],
-        url: 'https://vercel.com/dashboard',
-      },
-    ],
-    [
-      'w',
-      {
-        name: 'Twitter',
-        url: 'https://twitter.com/home',
-      },
-    ],
-    [
-      'y',
-      {
-        name: 'YouTube',
-        searchTemplate: '/results?search_query={}',
-        url: 'https://youtube.com/feed/subscriptions',
       },
     ],
     [
@@ -163,10 +142,11 @@
       {
         name: 'local',
         searchTemplate: ':{}',
-        suggestions: ['0 54323', '0 54324'],
+        suggestions: ['0 80', '0 5000'],
         url: 'http://localhost:3000',
       },
     ],
+    ['?', { name: 'Help', url: 'https://github.com/KNIF/tilde' }],
   ]);
 </script>
 
